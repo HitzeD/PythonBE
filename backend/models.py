@@ -15,4 +15,7 @@ class Contact(models.Model):
 
     def __str__(self):
         return f"id: {self.id}\nName: {self.lname}, {self.fname}\nEmail: {self.email}\nContent: {self.content}"
-    
+
+class PersonalContact(Contact):
+
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
